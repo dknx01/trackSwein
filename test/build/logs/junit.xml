@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tracking Test Suite" tests="16" assertions="15" failures="0" errors="1" time="0.071744">
+    <testsuite name="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" fullPackage="Tracking" tests="7" assertions="7" failures="0" errors="0" time="0.028022">
+      <testcase name="testInstance" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="14" assertions="1" time="0.004909"/>
+      <testcase name="testSet" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="18" assertions="1" time="0.009549"/>
+      <testcase name="testUndefinedProperty" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="23" assertions="1" time="0.002844"/>
+      <testcase name="testSetIdIndirect" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="31" assertions="1" time="0.002709"/>
+      <testcase name="testSetId" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="36" assertions="1" time="0.002597"/>
+      <testcase name="testGetName" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="41" assertions="1" time="0.002944"/>
+      <testcase name="testAdditionalData" class="Tracking_DataTest" file="/home/erik/git-repos/test/test/backend/Tracking_DataTest.php" line="46" assertions="1" time="0.002470"/>
+    </testsuite>
+    <testsuite name="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" fullPackage="Tracking" tests="9" assertions="8" failures="0" errors="1" time="0.043722">
+      <testcase name="testInstance" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="14" assertions="1" time="0.003746"/>
+      <testcase name="testDatabase" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="18" assertions="1" time="0.002389"/>
+      <testcase name="testAgent" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="24" assertions="1" time="0.002624"/>
+      <testcase name="testDataObjectName" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="29" assertions="1" time="0.002666"/>
+      <testcase name="testGenerateNoService" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="34" assertions="1" time="0.003226"/>
+      <testcase name="testGenerateNewDataObject" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="43" assertions="1" time="0.003379"/>
+      <testcase name="testGenerateAdditionalParameters" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="52" assertions="1" time="0.003198"/>
+      <testcase name="testGenerateNoGenerateFunction" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="61" assertions="1" time="0.009532"/>
+      <testcase name="testGenerate" class="Tracking_GeneratorTest" file="/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php" line="70" assertions="0" time="0.012962">
+        <error type="Exception">Tracking_GeneratorTest::testGenerate
+Exception: Tracking service Foo has no generate function.
+
+/home/erik/git-repos/test/src/Tracking/Generator.php:75
+/home/erik/git-repos/test/test/backend/Tracking_GeneratorTest.php:93
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>

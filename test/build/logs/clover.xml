@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1374607886">
+  <project timestamp="1374607886">
+    <file name="/home/erik/git-repos/test/src/Tracking/Data.php">
+      <class name="Tracking_Data" namespace="global" fullPackage="Tracking">
+        <metrics methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="37" coveredelements="37"/>
+      </class>
+      <line num="34" type="method" name="getInstance" crap="2" count="7"/>
+      <line num="36" type="stmt" count="7"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="7"/>
+      <line num="42" type="method" name="__construct" crap="1" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="52" type="method" name="__set" crap="2" count="2"/>
+      <line num="54" type="stmt" count="2"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="56" type="stmt" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="58" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="2"/>
+      <line num="68" type="method" name="__get" crap="3" count="3"/>
+      <line num="70" type="stmt" count="3"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="72" type="stmt" count="1"/>
+      <line num="73" type="stmt" count="2"/>
+      <line num="74" type="stmt" count="1"/>
+      <line num="76" type="stmt" count="1"/>
+      <line num="85" type="method" name="setId" crap="1" count="2"/>
+      <line num="87" type="stmt" count="2"/>
+      <line num="88" type="stmt" count="2"/>
+      <line num="94" type="method" name="getId" crap="1" count="2"/>
+      <line num="96" type="stmt" count="2"/>
+      <line num="104" type="method" name="setName" crap="1" count="1"/>
+      <line num="106" type="stmt" count="1"/>
+      <line num="107" type="stmt" count="1"/>
+      <line num="113" type="method" name="getName" crap="1" count="1"/>
+      <line num="115" type="stmt" count="1"/>
+      <line num="123" type="method" name="setAdditionalData" crap="1" count="1"/>
+      <line num="125" type="stmt" count="1"/>
+      <line num="126" type="stmt" count="1"/>
+      <line num="132" type="method" name="getAdditionalData" crap="1" count="1"/>
+      <line num="134" type="stmt" count="1"/>
+      <line num="136" type="stmt" count="1"/>
+      <metrics loc="135" ncloc="77" classes="1" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="37" coveredelements="37"/>
+    </file>
+    <file name="/home/erik/git-repos/test/src/Tracking/Generator.php">
+      <class name="Tracking_Generator" namespace="global" fullPackage="Tracking">
+        <metrics methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="29" elements="45" coveredelements="37"/>
+      </class>
+      <line num="43" type="method" name="getInstance" crap="2" count="9"/>
+      <line num="45" type="stmt" count="9"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="9"/>
+      <line num="59" type="method" name="generate" crap="10.37" count="5"/>
+      <line num="61" type="stmt" count="5"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="5"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="66" type="stmt" count="1"/>
+      <line num="67" type="stmt" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="1"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="71" type="stmt" count="5"/>
+      <line num="72" type="stmt" count="5"/>
+      <line num="73" type="stmt" count="2"/>
+      <line num="74" type="stmt" count="2"/>
+      <line num="75" type="stmt" count="2"/>
+      <line num="77" type="stmt" count="0"/>
+      <line num="78" type="stmt" count="0"/>
+      <line num="79" type="stmt" count="0"/>
+      <line num="80" type="stmt" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="86" type="stmt" count="3"/>
+      <line num="94" type="method" name="setDataObjectName" crap="1" count="2"/>
+      <line num="96" type="stmt" count="2"/>
+      <line num="97" type="stmt" count="2"/>
+      <line num="103" type="method" name="getDataObjectName" crap="1" count="2"/>
+      <line num="105" type="stmt" count="2"/>
+      <line num="113" type="method" name="setAgent" crap="1" count="1"/>
+      <line num="115" type="stmt" count="1"/>
+      <line num="116" type="stmt" count="1"/>
+      <line num="122" type="method" name="getAgent" crap="1" count="1"/>
+      <line num="124" type="stmt" count="1"/>
+      <line num="132" type="method" name="setDb" crap="1" count="1"/>
+      <line num="134" type="stmt" count="1"/>
+      <line num="135" type="stmt" count="1"/>
+      <line num="141" type="method" name="getDb" crap="1" count="1"/>
+      <line num="143" type="stmt" count="1"/>
+      <line num="146" type="stmt" count="1"/>
+      <metrics loc="145" ncloc="82" classes="1" methods="8" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="29" elements="45" coveredelements="36"/>
+    </file>
+    <file name="/home/erik/git-repos/test/src/Tracking/Service/ServiceAbstract.php">
+      <class name="Tracking_Service_ServiceAbstract" namespace="global" fullPackage="Tracking.Service">
+        <metrics methods="19" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="0" elements="78" coveredelements="0"/>
+      </class>
+      <line num="25" type="method" name="__construct" crap="2" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="31" type="method" name="generate" crap="1" count="0"/>
+      <line num="33" type="method" name="_getDataObjectName" crap="2" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="41" type="method" name="_getData" crap="2" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="47" type="method" name="setDataObjectName" crap="20" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="60" type="method" name="_getNeededParamsFromDb" crap="12" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="63" type="stmt" count="0"/>
+      <line num="64" type="stmt" count="0"/>
+      <line num="65" type="stmt" count="0"/>
+      <line num="66" type="stmt" count="0"/>
+      <line num="67" type="stmt" count="0"/>
+      <line num="68" type="stmt" count="0"/>
+      <line num="69" type="stmt" count="0"/>
+      <line num="70" type="stmt" count="0"/>
+      <line num="71" type="stmt" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="73" type="stmt" count="0"/>
+      <line num="74" type="stmt" count="0"/>
+      <line num="75" type="stmt" count="0"/>
+      <line num="78" type="method" name="_getValuesFromDb" crap="12" count="0"/>
+      <line num="79" type="stmt" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="86" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <line num="91" type="stmt" count="0"/>
+      <line num="99" type="method" name="setAgent" crap="2" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="108" type="method" name="getAgent" crap="2" count="0"/>
+      <line num="110" type="stmt" count="0"/>
+      <line num="116" type="method" name="_getService" crap="6" count="0"/>
+      <line num="118" type="stmt" count="0"/>
+      <line num="119" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
+      <line num="121" type="stmt" count="0"/>
+      <line num="122" type="stmt" count="0"/>
+      <line num="130" type="method" name="setDbConnection" crap="2" count="0"/>
+      <line num="132" type="stmt" count="0"/>
+      <line num="133" type="stmt" count="0"/>
+      <line num="139" type="method" name="getDbConnection" crap="2" count="0"/>
+      <line num="141" type="stmt" count="0"/>
+      <line num="149" type="method" name="setDbValues" crap="2" count="0"/>
+      <line num="151" type="stmt" count="0"/>
+      <line num="152" type="stmt" count="0"/>
+      <line num="158" type="method" name="getDbValues" crap="2" count="0"/>
+      <line num="160" type="stmt" count="0"/>
+      <line num="168" type="method" name="setNeededParameters" crap="2" count="0"/>
+      <line num="170" type="stmt" count="0"/>
+      <line num="171" type="stmt" count="0"/>
+      <line num="177" type="method" name="getNeededParameters" crap="2" count="0"/>
+      <line num="179" type="stmt" count="0"/>
+      <line num="187" type="method" name="setAdditionalParameters" crap="6" count="0"/>
+      <line num="189" type="stmt" count="0"/>
+      <line num="190" type="stmt" count="0"/>
+      <line num="196" type="method" name="getAdditionalParameters" crap="2" count="0"/>
+      <line num="198" type="stmt" count="0"/>
+      <line num="201" type="method" name="_getParameter" crap="6" count="0"/>
+      <line num="203" type="stmt" count="0"/>
+      <line num="204" type="stmt" count="0"/>
+      <line num="206" type="stmt" count="0"/>
+      <line num="209" type="stmt" count="0"/>
+      <metrics loc="208" ncloc="149" classes="1" methods="18" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="59" coveredstatements="0" elements="77" coveredelements="0"/>
+    </file>
+    <metrics files="3" loc="488" ncloc="308" classes="3" methods="36" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="123" coveredstatements="56" elements="159" coveredelements="73"/>
+  </project>
+</coverage>
