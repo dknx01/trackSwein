@@ -37,15 +37,6 @@ class Tracking_GeneratorTest extends PHPUnit_Framework_TestCase
             $this->assertEquals('Tracking service Foo does not exists.', $e->getMessage());
         }
     }
-    public function testGenerateNewDataObject()
-    {
-        try {
-            Tracking_Generator::getInstance()->generate('foo', '', null, 'NewObject');
-        } catch (Exception $e)
-        {
-            $this->assertEquals('NewObject', Tracking_Generator::getInstance()->getDataObjectName());
-        }
-    }
     public function testGenerateAdditionalParameters()
     {
         try {
@@ -87,7 +78,12 @@ class Tracking_GeneratorTest extends PHPUnit_Framework_TestCase
 //        $mock->expects($this->any())
 //             ->method('generate')
 //             ->will($this->returnValue('This is the tracking code.'));
-//        Tracking_Generator::getInstance()->generate('Foo');
+////        Tracking_Generator::getInstance()->generate('Foo');
+//        $stub = $this->getMockForAbstractClass('Tracking_Service_ServiceAbstract');
+//        $stub->expects($this->any())
+//             ->method('generate')
+//             ->will($this->returnValue('I track You.'));
+//        var_dump($stub->generate());
         $this->markTestIncomplete();
     }
 

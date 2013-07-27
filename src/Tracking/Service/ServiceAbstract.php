@@ -11,33 +11,33 @@ abstract class Tracking_Service_ServiceAbstract
     const PARAMETER_TABLE = 'Tracking_Config';
     const VALUE_TABLE = 'Tracking_Value';
     const DATA_OBJECT_NAME = 'Tracking_Data';
-    protected $_dataObjectName = '';
-    protected $_dbConnection = null;
-    protected $_service = null;
-    protected $_agent = null;
-    protected $_additionalParameters = null;
-    protected $_neededParameters = array();
-    protected $_dbValues = array();
+    protected $dataObjectName = '';
+    protected $dbConnection = null;
+    protected $service = null;
+    protected $agent = null;
+    protected $additionalParameters = null;
+    protected $neededParameters = array();
+    protected $dbValues = array();
 
     public function __construct()
     {
         $this->setDataObjectName();
-        $this->_additionalParameters = new stdClass();
+        $this->additionalParameters = new stdClass();
     }
 
     abstract function generate($page = null);
 
-    protected function _getDataObjectName()
+    protected function getDataObjectName()
     {
-        return $this->_dataObjectName;
+        return $this->dataObjectName;
     }
 
     /**
      * @return Tracking_Data|mixed
      */
-    protected function _getData()
+    protected function getData()
     {
-        $objectName = $this->_getDataObjectName();
+        $objectName = $this->getDataObjectName();
         return $objectName::getInstance();
     }
 
@@ -46,7 +46,7 @@ abstract class Tracking_Service_ServiceAbstract
         if (!is_null($name) && !class_exists($name)) {
             throw new Exception('Tracking data class ' . $name . ' does not exists.');
         }
-        $this->_dataObjectName = !is_null($name) ? $name : self::DATA_OBJECT_NAME;
+        $this->dataObjectName = !is_null($name) ? $name : self::DATA_OBJECT_NAME;
         return $this;
     }
 
@@ -54,11 +54,11 @@ abstract class Tracking_Service_ServiceAbstract
      * @param string $page
      * @return array
      */
-    protected function _getNeededParamsFromDb($page)
+    protected function getNeededParamsFromDb($page)
     {
         if (!array_key_exists($page, $this->_neededParameters)) {
             $sql = 'SELECT parameter FROM ' . self::PARAMETER_TABLE . ' t'
-                 . ' WHERE t.service = ' . $this->getDbConnection()->quote($this->_getService())
+                 . ' WHERE t.service = ' . $this->getDbConnection()->quote($this->getService())
                  . ' AND t.agent=' . $this->getDbConnection()->quote($this->getAgent())
                  . ' AND t.page=' . $this->getDbConnection()->quote($page)
                  . ' ORDER BY t.position ASC';
@@ -72,10 +72,10 @@ abstract class Tracking_Service_ServiceAbstract
         return $this->getNeededParameters($page);
     }
 
-    protected function _getValuesFromDb($page) {
-        if (!array_key_exists($page, $this->_dbValues)) {
+    protected function getValuesFromDb($page) {
+        if (!array_key_exists($page, $this->dbValues)) {
             $sql = 'SELECT parameter, value FROM ' . self::VALUE_TABLE
-                . ' WHERE service=' . $this->getDbConnection()->quote($this->_getService())
+                . ' WHERE service=' . $this->getDbConnection()->quote($this->getService())
                 . ' AND agent=' . $this->getDbConnection()->quote($this->getAgent())
                 . ' AND page=' . $this->getDbConnection()->quote($page);
             $result = $this->getDbConnection()->query($sql)->fetchAll();
@@ -89,44 +89,44 @@ abstract class Tracking_Service_ServiceAbstract
     }
 
     /**
-     * @param null $agent
+     * @param mixed $agent
      *
-     * @return ${NAMESPACE}
+     * @return Tracking_Service_ServiceAbstract
      */
     public function setAgent($agent)
     {
-        $this->_agent = $agent;
+        $this->agent = $agent;
         return $this;
     }
 
     /**
-     * @return null
+     * @return mixed
      */
     public function getAgent()
     {
-        return $this->_agent;
+        return $this->agent;
     }
 
     /**
      * @return string
      */
-    protected function _getService()
+    protected function getService()
     {
-        if (is_null($this->_service)) {
+        if (is_null($this->service)) {
             $calledClass = get_called_class();
-            $this->_service = substr($calledClass, strrpos($calledClass, '_') + 1);
+            $this->service = substr($calledClass, strrpos($calledClass, '_') + 1);
         }
-        return $this->_service;
+        return $this->service;
     }
 
     /**
      * @param PDO $dbConnection
      *
-     * @return ${NAMESPACE}
+     * @return Tracking_Service_ServiceAbstract
      */
     public function setDbConnection($dbConnection)
     {
-        $this->_dbConnection = $dbConnection;
+        $this->dbConnection = $dbConnection;
         return $this;
     }
 
@@ -135,17 +135,17 @@ abstract class Tracking_Service_ServiceAbstract
      */
     public function getDbConnection()
     {
-        return $this->_dbConnection;
+        return $this->dbConnection;
     }
 
     /**
      * @param array $dbValues
      *
-     * @return ${NAMESPACE}
+     * @return Tracking_Service_ServiceAbstract
      */
     public function setDbValues($page, $dbValues)
     {
-        $this->_dbValues[$page] = $dbValues;
+        $this->dbValues[$page] = $dbValues;
         return $this;
     }
 
@@ -154,17 +154,17 @@ abstract class Tracking_Service_ServiceAbstract
      */
     public function getDbValues($page)
     {
-        return $this->_dbValues[$page];
+        return $this->dbValues[$page];
     }
 
     /**
      * @param array $neendedParameters
      *
-     * @return ${NAMESPACE}
+     * @return Tracking_Service_ServiceAbstract
      */
     public function setNeededParameters($page, $neendedParameters)
     {
-        $this->_neededParameters[$page] = $neendedParameters;
+        $this->neededParameters[$page] = $neendedParameters;
         return $this;
     }
 
@@ -173,7 +173,7 @@ abstract class Tracking_Service_ServiceAbstract
      */
     public function getNeededParameters($page)
     {
-        return $this->_neededParameters[$page];
+        return $this->neededParameters[$page];
     }
 
     /**
@@ -183,7 +183,7 @@ abstract class Tracking_Service_ServiceAbstract
      */
     public function setAdditionalParameters($additionalParameters)
     {
-        $this->_additionalParameters = is_null($additionalParameters) ? new stdClass() : $additionalParameters;
+        $this->additionalParameters = is_null($additionalParameters) ? new stdClass() : $additionalParameters;
         return $this;
     }
 
@@ -192,13 +192,13 @@ abstract class Tracking_Service_ServiceAbstract
      */
     public function getAdditionalParameters()
     {
-        return $this->_additionalParameters;
+        return $this->additionalParameters;
     }
 
-    protected function _getParameter($name)
+    protected function getParameter($name)
     {
-        if (property_exists($this->_additionalParameters, $name)) {
-            return $this->_additionalParameters->$name;
+        if (property_exists($this->additionalParameters, $name)) {
+            return $this->additionalParameters->$name;
         } else {
             throw new Exception('Tracking service parameter ' . $name . ' does not exists.');
         }

@@ -56,8 +56,8 @@ class Tracking_Generator
      */
     public function generate($service, $page = '', $additionalParameters = null, $dataObjectName = null)
     {
-        if (!is_null($dataObjectName)) {
-            $this->setDataObjectName($dataObjectName);
+        if (is_null($dataObjectName)) {
+            $dataObjectName = $this->getDataObjectName();
         }
         if (!is_null($additionalParameters) && is_array($additionalParameters)) {
             $params = $additionalParameters;
@@ -72,14 +72,13 @@ class Tracking_Generator
                 if (!method_exists($className, 'generate')) {
                     throw new Exception('Tracking service ' . ucfirst($service) . ' has no generate function.');
                 }
-                $this->instances[$service][$this->getDataObjectName()] = new $className();
-                $this->instances[$service][$this->getDataObjectName()]->setDataObjectName($this->getDataObjectName())
-                                                                      ->setAgent($this->getAgent())
-                                                                      ->setDbConnection($this->getDb());
+                $this->instances[$service][$dataObjectName] = new $className();
+                $this->instances[$service][$dataObjectName]->setDataObjectName($dataObjectName)
+                                                           ->setAgent($this->getAgent())
+                                                           ->setDbConnection($this->getDb());
             }
-            return $this->instances[$service][$this->getDataObjectName()]
-                                                ->setAdditionalParameters($additionalParameters)
-                                                ->generate($page);
+            return $this->instances[$service][$dataObjectName]->setAdditionalParameters($additionalParameters)
+                                                              ->generate($page);
         } else {
             throw new Exception('Tracking service ' . ucfirst($service) . ' does not exists.');
         }
