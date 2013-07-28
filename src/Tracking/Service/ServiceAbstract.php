@@ -56,7 +56,7 @@ abstract class Tracking_Service_ServiceAbstract
      */
     protected function getNeededParamsFromDb($page)
     {
-        if (!array_key_exists($page, $this->_neededParameters)) {
+        if (!array_key_exists($page, $this->neededParameters)) {
             $sql = 'SELECT parameter FROM ' . self::PARAMETER_TABLE . ' t'
                  . ' WHERE t.service = ' . $this->getDbConnection()->quote($this->getService())
                  . ' AND t.agent=' . $this->getDbConnection()->quote($this->getAgent())
@@ -124,7 +124,7 @@ abstract class Tracking_Service_ServiceAbstract
      *
      * @return Tracking_Service_ServiceAbstract
      */
-    public function setDbConnection($dbConnection)
+    public function setDbConnection(PDO $dbConnection)
     {
         $this->dbConnection = $dbConnection;
         return $this;

@@ -14,7 +14,6 @@ class Tracking_GeneratorTest extends PHPUnit_Framework_TestCase
     }
     public function testDatabase()
     {
-        require_once realpath(__DIR__) . '/../classes/MockPdo.php';
         Tracking_Generator::getInstance()->setDb(new MockPdo());
         $this->assertInstanceOf('PDO', Tracking_Generator::getInstance()->getDb());
     }
@@ -57,34 +56,8 @@ class Tracking_GeneratorTest extends PHPUnit_Framework_TestCase
     }
     public function testGenerate()
     {
-//        $mock = $this->getMock('Tracking_Service_Foo',
-//            array('setDataObjectName',
-//                'setAgent',
-//                'setDbConnection',
-//                'setAdditionalParameters',
-//                 'generate'));
-//        $mock->expects($this->any())
-//             ->method('setDataObjectName')
-//             ->will($this->returnValue('Tracking_Data'));
-//        $mock->expects($this->any())
-//             ->method('setAgent')
-//             ->will($this->returnValue(1));
-//        $mock->expects($this->any())
-//             ->method('setDbConnection')
-//             ->will($this->returnValue(new MockPdo()));
-//        $mock->expects($this->any())
-//             ->method('setAdditionalParameters')
-//             ->will($this->returnValue(new stdClass()));
-//        $mock->expects($this->any())
-//             ->method('generate')
-//             ->will($this->returnValue('This is the tracking code.'));
-////        Tracking_Generator::getInstance()->generate('Foo');
-//        $stub = $this->getMockForAbstractClass('Tracking_Service_ServiceAbstract');
-//        $stub->expects($this->any())
-//             ->method('generate')
-//             ->will($this->returnValue('I track You.'));
-//        var_dump($stub->generate());
-        $this->markTestIncomplete();
+        Tracking_Generator::getInstance()->setDataObjectName(null);
+        $this->assertEquals('Tracking', Tracking_Generator::getInstance()->generate('Bar'));
     }
 
 }
